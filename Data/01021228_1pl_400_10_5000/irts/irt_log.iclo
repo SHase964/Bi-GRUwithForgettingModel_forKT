@@ -1,0 +1,49 @@
+IRT Command Language (ICL)
+Version 0.020301
+
+Jan 02, 2023 12:42
+
+Command file IRT_icl_cmd.tcl
+----------------------------------------------------------------------
+output -log_file irt_log.iclo
+set_default_model_dichtomous 1PL
+options -D 1.7
+allocate_items_dist 50 -num_latent_dist_points 20
+read_examinees ../skills/skill_9_train1.dat 50i1
+starting_values_dichotomous
+EM_steps -max_iter 2000
+write_item_param irt_param_skill_9_train1.iclp
+release_items_dist
+----------------------------------------------------------------------
+
+Number of items: 50
+Number of latent variable points: 20
+Number of examinee groups: 1
+
+Default prior for a-parameters:
+ beta  a: 1.750   b: 3.000   lower limit: 0.000    upper limit: 3.000  
+Default prior for b-parameters:
+ beta  a: 1.010   b: 1.010   lower limit: -6.000   upper limit: 6.000  
+Default prior for c-parameters:
+ beta  a: 3.500   b: 4.000   lower limit: 0.000    upper limit: 0.500  
+
+Read 4989 examinee records from file ../skills/skill_9_train1.dat
+
+EM iterations
+(iteration: parameter criterion, marginal posterior mode)
+    1: 0.604909  -12647.9456
+    2: 0.182557  -12513.1852
+    3: 0.090186  -12462.0599
+    4: 0.055470  -12438.2232
+    5: 0.037840  -12426.8340
+    6: 0.026182  -12421.3822
+    7: 0.018121  -12418.7737
+    8: 0.012552  -12417.5263
+    9: 0.008687  -12416.9300
+   10: 0.006001  -12416.6451
+   11: 0.004157  -12416.5089
+   12: 0.002874  -12416.4438
+   13: 0.001987  -12416.4127
+   14: 0.001373  -12416.3979
+   15: 0.000949  -12416.3908
+
